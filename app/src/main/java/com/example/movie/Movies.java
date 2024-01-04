@@ -2,12 +2,6 @@ package com.example.movie;
 
 import java.util.List;
 
-/*data class Movies(
-    val page: Int,
-    val results: List<Result>,
-    val total_pages: Int,
-    val total_results: Int
-)*/
 public class Movies {
     private int page;
     private List<Result> results;

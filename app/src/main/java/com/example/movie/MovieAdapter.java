@@ -1,7 +1,10 @@
 package com.example.movie;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,12 +17,16 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
+    SetOnMovieClickListener movieClickListener;
     ArrayList<Result> movieList;
     public void setList(ArrayList<Result> movielist ){
         this.movieList= movielist;
         notifyDataSetChanged();
     }
-    static class ViewHolder extends RecyclerView.ViewHolder {
+
+
+
+    static class ViewHolder extends RecyclerView.ViewHolder  {
         private final RvItemBinding rvItemBinding;
         public ViewHolder(RvItemBinding rvItemBinding) {
             super(rvItemBinding.getRoot());
@@ -36,11 +43,19 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Result result = movieList.get(position);
         Glide.with(holder.itemView)
-                .load("https://image.tmdb.org/t/p/w500"+ movieList.get(position).getPoster_path())
+                .load("https://image.tmdb.org/t/p/w500"+ result.getPoster_path())
                 .into(holder.rvItemBinding.imageItem);
-                holder.rvItemBinding.textItem.setText(movieList.get(position).getTitle());
+                holder.rvItemBinding.textItem.setText(result.getOriginal_title());
+
+                holder.rvItemBinding.imageItem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        movieClickListener.setOnClickListener(result,position);
+                    }
+                });
     }
 
     @Override
@@ -53,5 +68,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         }
     }
 
+
+    //to be listenterable
+    public interface SetOnMovieClickListener {
+        void setOnClickListener(Result result,int position);
+    }
 
 }

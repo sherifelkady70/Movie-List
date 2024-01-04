@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReviewActivity"
+    android:background="#121212">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#121212"
+            android:layout_marginTop="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/movie_details"
+                android:textColor="#F8D75D"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"/>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ImageView
+        android:id="@+id/imageForDetails"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        tools:src="@drawable/oppenheiemr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/textForMovieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Killers Of Flower Moon"
+        android:textSize="16sp"
+        android:padding="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageForDetails"/>
+
+    <TextView
+        android:id="@+id/textForReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movie_review"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textForMovieName"
+        android:textSize="18sp"
+        android:textColor="#F8D75D"
+        android:layout_marginTop="20dp"
+
+        />
+    <TextView
+        android:id="@+id/textForMovieReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textForReview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:padding="6dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        tools:text="The Best Movie Of 2023  sssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"/>
+
+    <TextView
+        android:id="@+id/ReleaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textForMovieReview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="5dp"
+        android:text="@string/release_date"
+        android:padding="3dp"
+        android:textColor="#F8D75D"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:id="@+id/ReleaseDateForMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ReleaseDate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
+        tools:text="12/5/2026"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        android:id="@+id/vote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ReleaseDateForMovie"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
+        android:text="@string/average_vote"
+        android:textColor="#F8D75D"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/voteCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/vote"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
+        tools:text="9.5"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
